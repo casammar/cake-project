@@ -5,8 +5,9 @@
  */
 ?>
 <div class="tags index large-9 medium-8 columns content">
-    <h3><?= __('Tags') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h1><?= __('Tags') ?></h1>
+    <p><?= $this->Html->link(__('Add Tag'), ['action' => 'add'], ['class' => 'btn btn-success']) ?></p>
+    <table cellpadding="0" cellspacing="0" class="table table-bordered">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -24,8 +25,8 @@
                 <td><?= h($tag->created) ?></td>
                 <td><?= h($tag->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $tag->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tag->id]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $tag->id]) ?> |
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $tag->id]) ?> |
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $tag->id], ['confirm' => __('Are you sure you want to delete # {0}?', $tag->id)]) ?>
                 </td>
             </tr>

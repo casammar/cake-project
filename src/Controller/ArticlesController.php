@@ -13,7 +13,7 @@ class ArticlesController extends AppController
         parent::initialize();
 
         $this->loadComponent('Paginator');
-        $this->loadComponent('Flash'); // Include the FlashComponent
+        $this->loadComponent('Flash');
     }
 
     public function index()
@@ -70,14 +70,7 @@ class ArticlesController extends AppController
             }
             $this->Flash->error(__('Unable to update your article.'));
         }
-        // Get a list of tags.
-        $tags = $this->Articles->Tags->find('list');
-
-        // Set tags to the view context
-        $this->set([
-            'article' => $article,
-            'tags' => $tags,
-        ]);
+        $this->set('article', $article);
     }
 
     public function delete($slug)

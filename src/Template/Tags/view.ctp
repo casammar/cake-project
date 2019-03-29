@@ -5,8 +5,8 @@
  */
 ?>
 <div class="tags view large-9 medium-8 columns content">
-    <h3><?= h($tag->title) ?></h3>
-    <table class="vertical-table">
+    <h3>TAG: <?= h($tag->title) ?></h3>
+    <table class="table table-bordered">
         <tr>
             <th scope="row"><?= __('Title') ?></th>
             <td><?= h($tag->title) ?></td>
@@ -27,7 +27,7 @@
     <div class="related">
         <h4><?= __('Related Articles') ?></h4>
         <?php if (!empty($tag->articles)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table cellpadding="0" cellspacing="0" class="table table-bordered">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
