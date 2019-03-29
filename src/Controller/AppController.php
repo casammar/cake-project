@@ -78,5 +78,7 @@ class AppController extends Controller
          * Set default bootstrap layout
          */
         $this->viewBuilder()->setLayout('TwitterBootstrap/default');
+
+        $this->set('authUser', $this->Auth->user());
     }
 }
