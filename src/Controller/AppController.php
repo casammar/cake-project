@@ -44,7 +44,7 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler', [
             'enableBeforeRedirect' => false,
         ]);
-        
+
         $this->loadComponent('Flash');
 
         $this->loadComponent('Auth', [
@@ -73,5 +73,10 @@ class AppController extends Controller
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+
+        /*
+         * Set default bootstrap layout
+         */
+        $this->viewBuilder()->setLayout('TwitterBootstrap/default');
     }
 }

@@ -35,7 +35,7 @@ if (!$this->fetch('tb_footer')) {
 $this->prepend('tb_body_attrs', ' class="' . implode(' ', [$this->request->getParam('controller'), $this->request->getParam('action')]) . '" ');
 if (!$this->fetch('tb_body_start')) {
     $this->start('tb_body_start');
-    echo '<body' . $this->fetch('tb_body_attrs') . ' id="test">';
+    echo '<body' . $this->fetch('tb_body_attrs') . '>';
     $this->end();
 }
 /**
@@ -101,8 +101,12 @@ $this->prepend('script', $this->Html->script(['jquery/jquery', 'bootstrap/bootst
 
     <?php
     echo $this->fetch('tb_body_start');
+    //$this->Element('navbar');
+    echo $this->element('Navbar/default');
     echo $this->fetch('tb_flash');
+    echo '<div class="container" >';
     echo $this->fetch('content');
+    echo '</div>';
     echo $this->fetch('tb_footer');
     echo $this->fetch('script');
     echo $this->fetch('tb_body_end');
