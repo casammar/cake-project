@@ -14,8 +14,12 @@
        -->
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <?php if (!$authUser) { ?>
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><?= $this->Html->link('<span class="glyphicon glyphicon-log-in"></span> ' . __('Login'), ['controller' => 'Users', 'action' => 'login'], ['escape' => false]) ?></li>
+      <?php } else { ?>
+        <li><?= $this->Html->link('<span class="glyphicon glyphicon-log-in"></span> ' . __('Logout'), ['controller' => 'Users', 'action' => 'logout'], ['escape' => false]) ?></li>
+      <?php } ?>
     </ul>
   </div>
 </nav>
