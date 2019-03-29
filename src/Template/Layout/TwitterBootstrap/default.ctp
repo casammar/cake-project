@@ -24,8 +24,7 @@ if (!$this->fetch('title')) {
  * Default `footer` block.
  */
 if (!$this->fetch('tb_footer')) {
-    $this->start('tb_footer');
-    printf('&copy;%s %s', date('Y'), Configure::read('App.title'));
+    echo ' ';
     $this->end();
 }
 
