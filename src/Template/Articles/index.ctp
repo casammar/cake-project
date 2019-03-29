@@ -1,8 +1,8 @@
 <!-- File: src/Template/Articles/index.ctp  (edit links added) -->
 
 <h1>Articles</h1>
-<p><?= $this->Html->link("Add Article", ['action' => 'add']) ?></p>
-<table>
+<p><?= $this->Html->link(__('Add Article'), ['action' => 'add'], ['class' => 'btn btn-success']) ?></p>
+<table class="table table-bordered">
     <tr>
         <th>Title</th>
         <th>Created</th>
