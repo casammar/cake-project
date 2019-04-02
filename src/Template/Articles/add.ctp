@@ -2,7 +2,19 @@
 
 <h1>Add Article</h1>
 <?php
-    echo $this->Form->create($article);
+    echo $this->Form->create($article, ['align' => [
+        'sm' => [
+            'left' => 6,
+            'middle' => 6,
+            'right' => 12
+        ],
+        'md' => [
+            'left' => 4,
+            'middle' => 4,
+            'right' => 4
+        ]
+    ]]);
+    //echo $this->Form->create($article);
     echo $this->Form->control('user_id', ['type' => 'hidden', 'value' => 1]);
     echo $this->Form->control('title');
     echo $this->Form->control('body', ['rows' => '3']);
